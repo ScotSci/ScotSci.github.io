@@ -1,3 +1,4 @@
+package assignment_1;
 public class nth_node {
     static class Node {
         public int data;
@@ -23,7 +24,7 @@ public class nth_node {
             head = head.next;
             if(head != null)
             {
-                statement += ", ";    
+                statement += ", ";
             }
         }
         statement += "]";

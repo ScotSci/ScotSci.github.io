@@ -1,8 +1,9 @@
-public class find_element {
+package assignment_1;
+public class two_sum {
     public static void main(String[] args) throws Exception
     {
-        int input[] = {5, 7, 7, 8, 8, 10};
-        int target = 8;
+        int input[] = {3, 5, 6, 9, 10};
+        int target = 9;
         int output[] = algorithm(input, target);
         String firstSentence = "input = [";
         for (int i : input) {
@@ -22,22 +23,19 @@ public class find_element {
 
     public static int[] algorithm (int[] input, int target)
     {
-        int placeholder[] = {-1, -1};
+        int output[] = new int[2];
         for(int x = 0; x < input.length; x++)
         {
-            if(input[x] == target)
+            for(int y = x + 1; y < input.length; y++)
             {
-                if(placeholder[0] == -1) {
-                    placeholder[0] = x;
-                    placeholder[1] = x;
-                }
-                if(placeholder[1] < x)
+                if (input[x] + input[y] == target)
                 {
-                    System.out.println("check");
-                    placeholder[1] = x;
+                    output[0] = x;
+                    output[1] = y;
+                    return output;
                 }
             }
         }
-        return placeholder;
+        return output;
     }
 }
